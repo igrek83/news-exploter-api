@@ -7,4 +7,5 @@ module.exports = {
   articlesNotExistError: 'статьи не найдены',
   articleNotExistError: 'статья не существует',
   noRightsArticleDelError: 'нет прав на удаление статьи',
+  authError: 'ошибка авторизации',
 };
