@@ -8,11 +8,19 @@ const NotFoundError = require('../libs/notFoundError');
 const { userNotExistError } = require('../libs/errors-message');
 
 const createUser = (req, res, next) => {
-  const { email, password, name } = req.body;
+  const {
+    email,
+    password,
+    name,
+  } = req.body;
 
   bcrypt
     .hash(password, 10)
-    .then((hash) => user.create({ email, name, password: hash }))
+    .then((hash) => user.create({
+      email,
+      name,
+      password: hash,
+    }))
     .then((user) => {
       const { password: pass, ...newUser } = user._doc;
       res.status(201).send(newUser);
@@ -51,7 +59,7 @@ const getUserInfo = (req, res, next) => {
 };
 
 module.exports = {
-  getUserInfo,
   createUser,
   login,
+  getUserInfo,
 };
