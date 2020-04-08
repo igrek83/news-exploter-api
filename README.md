@@ -16,7 +16,7 @@
 {
   "name": "Иван",
   "email": "ivan.ivanov@yandex.ru",
-  "12345678"
+  "password": "12345678"
 }
 ```
 
@@ -25,7 +25,7 @@
 ```
 {
   "email": "ivan.ivanov@yandex.ru",
-  "12345678"
+   "password": "12345678"
 }
 ```
 
@@ -41,7 +41,7 @@
   "date": "08.04.2020",
   "source": "ИгрекНьюс",
   "link": "https://igrek-news.tk/",
-  "image": "https://avatarko.ru/img/kartinka/14/igra_Diablo_13268.jpg",
+  "image": "https://avatarko.ru/img/kartinka/14/igra_Diablo_13268.jpg"
 }
 ```
 
