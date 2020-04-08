@@ -4,9 +4,11 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const { errors } = require('celebrate');
+const cors = require('cors');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { limited } = require('./middlewares/express-rate-limit');
-const cors = require('cors');
+
+const { corsOptions } = require('./config/corse-config');
 
 const { PORT, MONGO_IP } = require('./config/config.js');
 
@@ -27,7 +29,7 @@ app.use(helmet());
 // защита от DDos
 app.use(limited);
 
-// app.use(cors());
+app.use(cors(corsOptions));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

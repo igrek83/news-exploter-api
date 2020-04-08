@@ -4,7 +4,8 @@
     "ecmaVersion": 6
   },
   "rules": {
-    "no-underscore-dangle": ["error", { "allow": ["id_", "_id"] }],
+    "func-names": ["error", "never", { "generators": "never" }],
+    "no-underscore-dangle": ["error",{ "allow": ["id_", "_id", "_doc"] }],
     "max-len": ["error", { "code": 150, "ignoreComments": false }],
     "no-console": 0,
     "curly": "warn",

@@ -1,4 +1,4 @@
-const {serverMessageError, emailDoubleError } = require('../libs/errors-message');
+const { serverMessageError, emailDoubleError } = require('../libs/errors-message');
 
 const errorHandler = (err, req, res, next) => {
   let { statusCode = 500, message = serverMessageError } = err;
