@@ -16,31 +16,36 @@ const emailValidator = [
   }),
 ];
 
-const userSchema = new mongoose.Schema({
-  // имя
-  name: {
-    type: String,
-    required: true,
-    minlength: 2,
-    maxlength: 30,
+const userSchema = new mongoose.Schema(
+  {
+    // имя
+    name: {
+      type: String,
+      required: true,
+      minlength: 2,
+      maxlength: 30,
+    },
+    // email
+    email: {
+      type: String,
+      unique: true,
+      required: true,
+      // регистр
+      uniqueCaseInsensitive: true,
+      validate: emailValidator,
+    },
+    // пароль
+    password: {
+      type: String,
+      required: true,
+      minlength: 8,
+      select: false,
+    },
   },
-  // email
-  email: {
-    type: String,
-    unique: true,
-    required: true,
-    // регистр
-    uniqueCaseInsensitive: true,
-    validate: emailValidator,
+  {
+    versionKey: false,
   },
-  // пароль
-  password: {
-    type: String,
-    required: true,
-    minlength: 8,
-    select: false,
-  },
-});
+);
 
 userSchema.plugin(uniqueValidator, { message: emailDoubleError });
 

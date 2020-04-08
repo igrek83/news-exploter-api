@@ -21,4 +21,5 @@ module.exports = {
   notImageErorr: 'Отсутствует иллюстрация к статье',
   notArticleIdError: 'Статья не найдена',
   serverMessageError: 'Ошибка сервера',
+  notFoundUrlError: 'Ресурс не найден',
 };
