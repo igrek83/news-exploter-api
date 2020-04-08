@@ -20,4 +20,5 @@ module.exports = {
   notLinkErorr: 'Отсутствует ссылка на статью',
   notImageErorr: 'Отсутствует иллюстрация к статье',
   notArticleIdError: 'Статья не найдена',
+  serverMessageError: 'Ошибка сервера',
 };

@@ -1,5 +1,5 @@
 const { celebrate, Joi } = require('celebrate');
-const BadRequestError = require('../libs/badRequestError');
+const BadRequestError = require('../libs/errors-message');
 Joi.objectId = require('joi-objectid')(Joi);
 
 const {
