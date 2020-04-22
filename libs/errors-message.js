@@ -19,7 +19,7 @@ module.exports = {
   notSourceErorr: 'Отсутствует источник статьи',
   notLinkErorr: 'Отсутствует ссылка на статью',
   notImageErorr: 'Отсутствует иллюстрация к статье',
-  notArticleIdError: 'Статья не найдена',
+  notArticleIdError: 'Невалидный индификатор статьи',
   serverMessageError: 'Ошибка сервера',
   notFoundUrlError: 'Ресурс не найден',
 };

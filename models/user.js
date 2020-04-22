@@ -46,7 +46,8 @@ const userSchema = new mongoose.Schema(
     versionKey: false,
   },
 );
-
+statusCode = 409;
+message = emailDoubleError;
 userSchema.plugin(uniqueValidator, { message: emailDoubleError });
 
 userSchema.statics.findUserByCredentials = function (email, password) {

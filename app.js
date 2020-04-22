@@ -8,8 +8,6 @@ const cors = require('cors');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { limited } = require('./middlewares/express-rate-limit');
 
-const { corsOptions } = require('./config/corse-config');
-
 const { PORT, MONGO_IP } = require('./config/config.js');
 
 const router = require('./routes/router');
@@ -24,12 +22,12 @@ mongoose.connect(MONGO_IP, {
   useUnifiedTopology: true,
 });
 
+
 // заголовки безопасности
 app.use(helmet());
 // защита от DDos
 app.use(limited);
-
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
