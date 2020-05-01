@@ -1,8 +1,10 @@
 module.exports.corsOptions = {
   origin: [
     'http://localhost:8080',
-    'http://localhost:8081',
-    'http://localhost:8082',
-    'https://igrek83.github.io/news-explorer-frontend/',
+    'https://github.com/igrek83/news-explorer-frontend',
   ],
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  preflightContinue: false,
+  credentials: true,
+  optionsSuccessStatus: 204,
 };
