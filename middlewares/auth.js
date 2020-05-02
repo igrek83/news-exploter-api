@@ -4,11 +4,12 @@ const LoginFailedError = require('../libs/loginFailedError');
 const { authError } = require('../libs/errors-message');
 
 module.exports.auth = (req, res, next) => {
-  const { jwt: token } = req.cookies;
-
-  if (!token) {
+  const { authorization } = req.headers;
+  if (!authorization || !authorization.startsWith('Bearer ')) {
     throw new LoginFailedError(authError);
   }
+
+  const token = authorization.replace('Bearer ', '');
 
   let payload;
 
