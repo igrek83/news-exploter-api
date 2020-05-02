@@ -2,7 +2,7 @@ const express = require('express');
 const helmet = require('helmet');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
+// const cookieParser = require('cookie-parser');
 const { errors } = require('celebrate');
 
 
@@ -35,7 +35,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // логгер запросов
 app.use(requestLogger);
-app.use(cookieParser());
+// app.use(cookieParser());
 app.use(router);
 // логгер ошибок. Подключается после всех обработчиков роутов
 app.use(errorLogger);

@@ -36,15 +36,7 @@ const login = (req, res, next) => {
       const token = jwt.sign({ _id: user._id }, JWT_SECRET, {
         expiresIn: '7d',
       });
-      res
-        .cookie('jwt', token, {
-          // срок 7 дней
-          maxAge: 360000 * 24 * 7,
-          // запрет на доступ к кукам через JS
-          httpOnly: true,
-          sameSite: true,
-        })
-        .end();
+      res.send({ token });
     })
     .catch(next);
 };
